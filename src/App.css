@@ -56,6 +56,11 @@
   font-weight: 600;
 }
 
+.messageInput:read-only {
+  border-color: #ccc;
+  opacity: 0.5;
+}
+
 @media only screen and (max-width: 640px) {
   .mainContainer {
     width: 100vw;

@@ -64,7 +64,7 @@ const App = () => {
         toast.error("No ethereum provider found");
       }
     } catch (error) {
-      toast.error(error.message);
+      console.log(error.message);
     }
   };
 
@@ -111,7 +111,9 @@ const App = () => {
         const account = accounts[0];
         setCurrentAccount(account);
       } else {
-        toast.error("No authorized account found");
+        console.log(
+          "No authorized account found, please connect your account first"
+        );
       }
     } catch (error) {
       toast.error("Error getting accounts");
@@ -139,6 +141,8 @@ const App = () => {
 
       toast.success("Connected");
       setCurrentAccount(accounts[0]);
+      getTotalWaves();
+      getAllWaves();
     } catch (error) {
       toast.error("Error connecting wallet");
     }
@@ -248,6 +252,7 @@ const App = () => {
               type="text"
               onChange={(e) => setMessage(e.target.value)}
               className="messageInput"
+              readOnly={!currentAccount}
             />
             <p className="bio">Total Waves : {totalWaves}</p>
             {yourWaveTxn && (
