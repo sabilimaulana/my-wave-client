@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .mainContainer {
   display: flex;
   justify-content: center;
@@ -40,4 +46,25 @@
 
 .waveButton:disabled {
   opacity: 0.5;
+}
+
+.messageInput {
+  padding: 8px;
+  border-color: #333;
+  border-radius: 5px;
+  transition-duration: 300ms;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 640px) {
+  .mainContainer {
+    width: 100vw;
+    padding: 0 25px;
+  }
+  .dataContainer {
+    max-width: none;
+    width: 100%;
+    font-size: 14px;
+    word-wrap: break-word;
+  }
 }
