@@ -181,6 +181,10 @@ const App = () => {
     setLoading(false);
   };
 
+  useEffect(() => {
+    getAllWaves();
+  }, []);
+
   /**
    * Listen in for emitter events!
    * Like websockets, we can listen in for events from our contract
@@ -188,7 +192,6 @@ const App = () => {
   useEffect(() => {
     checkIfWalletIsConnected();
     getTotalWaves();
-    getAllWaves();
 
     let wavePortalContract;
 
